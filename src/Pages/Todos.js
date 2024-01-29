@@ -1,16 +1,15 @@
+// Todos.js
 import React from "react";
+import CreateTodo from "../Components/CreateTodo";
+import TodoList from "../Components/TodoList";
+import TodoDetail from "../Components/TodoDetail";
 
 export default function Todos() {
-  function handleForm(e) {
-    e.preventDefault();
-  }
   return (
     <>
-      <form onSubmit={handleForm}>
-        <input type="text" />
-        <input type="text" />
-        <button>Add Todo</button>
-      </form>
+      <CreateTodo />
+      <TodoList />
+      <TodoDetail />
     </>
   );
 }
