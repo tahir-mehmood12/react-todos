@@ -13,7 +13,7 @@ export default function MainNavbar() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/todos">TodosList</NavLink>
+              <NavLink to="/todoslist">TodosList</NavLink>
             </li>
             <li>
               <NavLink to="/about">About</NavLink>
