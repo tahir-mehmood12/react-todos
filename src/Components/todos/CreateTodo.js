@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
-import { addTodo } from "../Store/todoSlice";
-// import styles from "../Styles/CreateTodo.scss";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../Store/todoSlice";
 
 export default function CreateTodo() {
   const [todoTitle, setTodoTitle] = useState("");
   const [todoDescription, setTodoDescription] = useState("");
   const dispatch = useDispatch();
-  //   const todos = useSelector((state) => state.todos.todos);
 
   function handleForm(e) {
     e.preventDefault();
@@ -32,7 +30,6 @@ export default function CreateTodo() {
           value={todoTitle}
           onChange={(e) => setTodoTitle(e.target.value)}
           required
-          //   className={styles.input}
         />
         <label>Enter Description *</label>
         <input
@@ -40,7 +37,6 @@ export default function CreateTodo() {
           value={todoDescription}
           onChange={(e) => setTodoDescription(e.target.value)}
           required
-          //   className={styles.input}
         />
         <button type="submit">Add Todo</button>
       </form>

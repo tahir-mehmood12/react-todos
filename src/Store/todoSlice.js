@@ -7,7 +7,7 @@ const todoSlice = createSlice({
   },
   reducers: {
     addTodo: (state, action) => {
-      state.todos = [...state.todos, action.payload]; // Create a new array with the new todo added
+      state.todos = [...state.todos, action.payload];
     },
 
     editTodo: (state, action) => {

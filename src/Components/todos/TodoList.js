@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { deleteTodo } from "../Store/todoSlice";
+import { deleteTodo } from "../../Store/todoSlice";
 import EditTodoModal from "./EditTodoModal";
-import { editTodo, toggleTodo } from "../Store/todoSlice";
+import { editTodo, toggleTodo } from "../../Store/todoSlice";
 
 export default function TodoList() {
   const [editTodoData, setEditTodoData] = useState(null);

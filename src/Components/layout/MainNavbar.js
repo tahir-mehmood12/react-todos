@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "../Styles/NavbarStyle.scss";
+import "../../Styles/NavbarStyle.scss";
 
 export default function MainNavbar() {
   const [isNavbarVisible, setNavbarVisibility] = useState(false);

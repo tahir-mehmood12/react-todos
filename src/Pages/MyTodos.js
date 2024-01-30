@@ -1,5 +1,5 @@
 import React from "react";
-import TodoList from "../Components/TodoList";
+import TodoList from "../Components/todos/TodoList";
 import "../Styles/TodoStyle.scss";
 
 export default function MyTodos() {

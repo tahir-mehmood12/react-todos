@@ -4,8 +4,6 @@ import Root from "./Pages/Root";
 import About from "./Pages/About";
 import Todos from "./Pages/Todos";
 import PageNotFound from "./Pages/PageNotFound";
-// import TodosList from "./Pages/TodosList";
-// import MyTodos from "./Pages/MyTodos";
 import MyTodos from "../src/Pages/MyTodos";
 const router = createBrowserRouter([
   {
