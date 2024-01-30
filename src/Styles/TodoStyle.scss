@@ -1,5 +1,5 @@
-$primary-color: #0cf3c0;
-$secondary-color: #1ee148;
+$primary-color: #01f5fe;
+$secondary-color: #1fd8e0;
 $primary-padding: 1rem;
 $primary-margin: 1rem;
 * {
@@ -9,6 +9,9 @@ $primary-margin: 1rem;
 .main {
   display: flex;
   flex-direction: column;
+  background: url("../assets/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
 }
 
 .create-todo {
