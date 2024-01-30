@@ -84,6 +84,7 @@ export default function TodoList() {
                 <div className="todo-detail">
                   <input
                     type="checkbox"
+                    className="checkbox"
                     checked={todo.completed}
                     onChange={() => handleCheckboxChange(todo)}
                   />
