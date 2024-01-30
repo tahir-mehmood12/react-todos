@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import "../Styles/EditModalStyle.scss";
 export default function EditTodoModal({ todo, onSave, onClose }) {
   const [updatedText, setUpdatedText] = useState("");
   const [updatedDescription, setUpdatedDescription] = useState("");
