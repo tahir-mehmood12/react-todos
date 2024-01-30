@@ -36,9 +36,13 @@ export default function EditTodoModal({ todo, onSave, onClose }) {
           value={updatedDescription}
           onChange={(e) => setUpdatedDescription(e.target.value)}
         />
-        <div>
-          <button onClick={handleSave}>Save</button>
-          <button onClick={handleCancel}>Cancel</button>
+        <div className="modal-btn">
+          <button onClick={handleCancel} className="cancel-btn">
+            Cancel
+          </button>
+          <button onClick={handleSave} className="save-btn">
+            Save
+          </button>
         </div>
       </div>
     </div>

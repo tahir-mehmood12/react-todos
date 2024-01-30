@@ -9,7 +9,7 @@ import "../../Styles/TodoStyle.scss";
 export default function TodoList() {
   const [editTodoData, setEditTodoData] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [filterType, setFilterType] = useState("all"); // Default filter type
+  const [filterType, setFilterType] = useState("all");
 
   const todos = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
@@ -63,9 +63,10 @@ export default function TodoList() {
     <>
       <div className="todo-list">
         <div className="todos-list">
-          <h1>Your Todos</h1>
+          <h2 style={{ textAlign: "center" }}>Todos List</h2>
+
           {filteredTodos().length > 0 && (
-            <div>
+            <div className="filter-btn">
               <button onClick={() => setFilterType("all")}>All</button>
               <button onClick={() => setFilterType("complete")}>
                 Complete
@@ -77,10 +78,7 @@ export default function TodoList() {
           )}
           <ul>
             {filteredTodos().map((todo) => (
-              <li
-                key={todo.id}
-                style={{ backgroundColor: todo.completed && "#1EE148" }}
-              >
+              <li key={todo.id} style={{ backgroundColor: todo.completed }}>
                 <div className="todo-detail">
                   <input
                     type="checkbox"
@@ -88,10 +86,13 @@ export default function TodoList() {
                     checked={todo.completed}
                     onChange={() => handleCheckboxChange(todo)}
                   />
-                  <div className="display-todo">
+                  <div
+                    className="display-todo"
+                    style={{ color: todo.completed ? "red" : "black" }}
+                  >
                     <strong>
                       {todo.text}
-                      {todo.completed ? " (Done )" : ""}
+                      {todo.completed ? " (Complete )" : ""}
                     </strong>
                     <span>{todo.description}</span>
                   </div>

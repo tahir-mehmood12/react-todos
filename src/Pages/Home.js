@@ -17,7 +17,7 @@ export default function Home() {
           productive life!
         </p>
         <NavLink to="/todos">
-          <button>Create Todo</button>
+          <button>Add Todo</button>
         </NavLink>
       </div>
     </>
