@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DeleteTodoButtons({ onDeleteCompleted, onDeleteAll }) {
+export default function DeleteTodosButton({ onDeleteCompleted, onDeleteAll }) {
   return (
     <div>
       <button onClick={onDeleteCompleted}>Delete Complete Todos</button>

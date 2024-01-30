@@ -8,6 +8,7 @@ import { editTodo, toggleTodo } from "../../Store/todoSlice";
 export default function TodoList() {
   const [editTodoData, setEditTodoData] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [filterType, setFilterType] = useState("all"); // Default filter type
 
   const todos = useSelector((state) => state.todos.todos);
   const dispatch = useDispatch();
@@ -37,12 +38,39 @@ export default function TodoList() {
     dispatch(toggleTodo(updatedTodo));
   };
 
+  const filteredTodos = () => {
+    switch (filterType) {
+      case "complete":
+        return todos.filter((todo) => todo.completed);
+      case "incomplete":
+        return todos.filter((todo) => !todo.completed);
+      default:
+        return todos;
+    }
+  };
+
+  const handleDeleteAllTodos = () => {
+    todos.forEach((todo) => dispatch(deleteTodo(todo.id)));
+  };
+
+  const handleDeleteCompletedTodos = () => {
+    const completedTodos = todos.filter((todo) => todo.completed);
+    completedTodos.forEach((todo) => dispatch(deleteTodo(todo.id)));
+  };
+
   return (
     <>
-      <div className="todos-list">
+      <div>
         <h1>Your Todos</h1>
+        <div>
+          <button onClick={() => setFilterType("all")}>All</button>
+          <button onClick={() => setFilterType("complete")}>Complete</button>
+          <button onClick={() => setFilterType("incomplete")}>
+            Incomplete
+          </button>
+        </div>
         <ul>
-          {todos.map((todo) => (
+          {filteredTodos().map((todo) => (
             <li
               key={todo.id}
               style={{ backgroundColor: todo.completed && "#1EE148" }}
@@ -81,6 +109,13 @@ export default function TodoList() {
             onClose={handleCloseModal}
           />
         )}
+
+        <div>
+          <button onClick={handleDeleteCompletedTodos}>
+            Delete Complete Todos
+          </button>
+          <button onClick={handleDeleteAllTodos}>Delete All Todos</button>
+        </div>
       </div>
     </>
   );
