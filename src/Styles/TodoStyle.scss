@@ -87,5 +87,20 @@ $primary-margin: 1rem;
         }
       }
     }
+    div {
+      display: flex;
+      justify-content: space-evenly;
+      button {
+        background-color: $primary-color;
+        border: 0;
+        border-radius: 999px;
+        margin: $primary-margin;
+        padding: 0.5rem;
+        width: 10rem;
+        &:hover {
+          background: $secondary-color;
+        }
+      }
+    }
   }
 }

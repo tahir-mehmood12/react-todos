@@ -60,61 +60,68 @@ export default function TodoList() {
 
   return (
     <>
-      <div>
-        <h1>Your Todos</h1>
-        <div>
-          <button onClick={() => setFilterType("all")}>All</button>
-          <button onClick={() => setFilterType("complete")}>Complete</button>
-          <button onClick={() => setFilterType("incomplete")}>
-            Incomplete
-          </button>
-        </div>
-        <ul>
-          {filteredTodos().map((todo) => (
-            <li
-              key={todo.id}
-              style={{ backgroundColor: todo.completed && "#1EE148" }}
-            >
-              <div className="todo-detail">
-                <input
-                  type="checkbox"
-                  checked={todo.completed}
-                  onChange={() => handleCheckboxChange(todo)}
-                />
-                <div className="display-todo">
-                  <strong>
-                    {todo.text}
-                    {todo.completed ? " (Done )" : ""}
-                  </strong>
-                  <span>{todo.description}</span>
+      <div className="todo-list">
+        <div className="todos-list">
+          <h1>Your Todos</h1>
+          {filteredTodos().length > 0 && (
+            <div>
+              <button onClick={() => setFilterType("all")}>All</button>
+              <button onClick={() => setFilterType("complete")}>
+                Complete
+              </button>
+              <button onClick={() => setFilterType("incomplete")}>
+                Incomplete
+              </button>
+            </div>
+          )}
+          <ul>
+            {filteredTodos().map((todo) => (
+              <li
+                key={todo.id}
+                style={{ backgroundColor: todo.completed && "#1EE148" }}
+              >
+                <div className="todo-detail">
+                  <input
+                    type="checkbox"
+                    checked={todo.completed}
+                    onChange={() => handleCheckboxChange(todo)}
+                  />
+                  <div className="display-todo">
+                    <strong>
+                      {todo.text}
+                      {todo.completed ? " (Done )" : ""}
+                    </strong>
+                    <span>{todo.description}</span>
+                  </div>
                 </div>
-              </div>
-              <div className="todo-actions">
-                <FaEdit
-                  className="edit-icon"
-                  onClick={() => handleEdit(todo)}
-                />
-                <FaTrash
-                  className="delete-icon"
-                  onClick={() => handleDelete(todo.id)}
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
-        {showModal && (
-          <EditTodoModal
-            todo={editTodoData}
-            onSave={handleSave}
-            onClose={handleCloseModal}
-          />
-        )}
-
-        <div>
-          <button onClick={handleDeleteCompletedTodos}>
-            Delete Complete Todos
-          </button>
-          <button onClick={handleDeleteAllTodos}>Delete All Todos</button>
+                <div className="todo-actions">
+                  <FaEdit
+                    className="edit-icon"
+                    onClick={() => handleEdit(todo)}
+                  />
+                  <FaTrash
+                    className="delete-icon"
+                    onClick={() => handleDelete(todo.id)}
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+          {showModal && (
+            <EditTodoModal
+              todo={editTodoData}
+              onSave={handleSave}
+              onClose={handleCloseModal}
+            />
+          )}
+          {filteredTodos().length > 0 && (
+            <div>
+              <button onClick={handleDeleteCompletedTodos}>
+                Delete Complete Todos
+              </button>
+              <button onClick={handleDeleteAllTodos}>Delete All Todos</button>
+            </div>
+          )}
         </div>
       </div>
     </>
