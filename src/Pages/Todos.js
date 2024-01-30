@@ -1,8 +1,9 @@
+// Todos.js
 import React from "react";
 import CreateTodo from "../Components/todos/CreateTodo";
+import TodoList from "../Components/TodoList";
 
 import "../Styles/TodoStyle.scss";
-import TodoList from "../Components/todos/todosList/TodosList";
 
 export default function Todos() {
   return (
