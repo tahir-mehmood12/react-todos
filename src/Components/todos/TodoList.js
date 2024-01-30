@@ -39,44 +39,49 @@ export default function TodoList() {
 
   return (
     <>
-      <h1>Your Todos</h1>
-      <ul>
-        {todos.map((todo) => (
-          <li
-            key={todo.id}
-            style={{ backgroundColor: todo.completed && "#1EE148" }}
-          >
-            <div className="todo-detail">
-              <input
-                type="checkbox"
-                checked={todo.completed}
-                onChange={() => handleCheckboxChange(todo)}
-              />
-              <div className="display-todo">
-                <strong>
-                  {todo.text}
-                  {todo.completed ? " (Done )" : ""}
-                </strong>
-                <span>{todo.description}</span>
+      <div className="todos-list">
+        <h1>Your Todos</h1>
+        <ul>
+          {todos.map((todo) => (
+            <li
+              key={todo.id}
+              style={{ backgroundColor: todo.completed && "#1EE148" }}
+            >
+              <div className="todo-detail">
+                <input
+                  type="checkbox"
+                  checked={todo.completed}
+                  onChange={() => handleCheckboxChange(todo)}
+                />
+                <div className="display-todo">
+                  <strong>
+                    {todo.text}
+                    {todo.completed ? " (Done )" : ""}
+                  </strong>
+                  <span>{todo.description}</span>
+                </div>
               </div>
-            </div>
-            <div className="todo-actions">
-              <FaEdit className="edit-icon" onClick={() => handleEdit(todo)} />
-              <FaTrash
-                className="delete-icon"
-                onClick={() => handleDelete(todo.id)}
-              />
-            </div>
-          </li>
-        ))}
-      </ul>
-      {showModal && (
-        <EditTodoModal
-          todo={editTodoData}
-          onSave={handleSave}
-          onClose={handleCloseModal}
-        />
-      )}
+              <div className="todo-actions">
+                <FaEdit
+                  className="edit-icon"
+                  onClick={() => handleEdit(todo)}
+                />
+                <FaTrash
+                  className="delete-icon"
+                  onClick={() => handleDelete(todo.id)}
+                />
+              </div>
+            </li>
+          ))}
+        </ul>
+        {showModal && (
+          <EditTodoModal
+            todo={editTodoData}
+            onSave={handleSave}
+            onClose={handleCloseModal}
+          />
+        )}
+      </div>
     </>
   );
 }
