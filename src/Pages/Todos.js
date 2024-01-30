@@ -8,10 +8,10 @@ export default function Todos() {
   return (
     <>
       <div className="main">
-        <div className="create-todo">
+        <div className="createtodo">
           <CreateTodo />
         </div>
-        <div className="todo-list">
+        <div className="todolist">
           <TodoList />
         </div>
       </div>

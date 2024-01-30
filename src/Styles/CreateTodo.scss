@@ -2,10 +2,23 @@ $primary-color: #0cf3c0;
 $secondary-color: #1ee148;
 $primary-padding: 1rem;
 $primary-margin: 1rem;
-.main {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid black;
+
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.todo-form {
+  .todo-title {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 1em;
+      font-weight: bold;
+    }
+    input {
+      width: 20rem;
+    }
+  }
 }
 
 .create-todo,
@@ -42,32 +55,28 @@ $primary-margin: 1rem;
 }
 .todo-form {
   display: flex;
-  justify-content: center;
-  div {
-    display: flex;
-    flex-direction: column;
-    width: 50rem;
+  flex-direction: column;
+  label {
+    padding-left: $primary-padding;
+  }
+  input {
+    padding: $primary-padding;
     margin: $primary-margin;
-    label {
-      padding-left: $primary-padding;
-    }
-    input {
-      padding: $primary-padding;
-      margin: $primary-margin;
-      border: 1px solid $primary-color;
-      border-radius: 999px;
-      outline-color: $secondary-color;
-    }
-    button {
-      padding: $primary-padding;
-      margin: $primary-margin;
-      background-color: $primary-color;
-      border: $primary-color;
-      font-size: large;
-      border-radius: 999px;
-      &:hover {
-        background: $secondary-color;
-      }
+    border: 1px solid $primary-color;
+    border-radius: 999px;
+    outline-color: $secondary-color;
+    max-width: 35rem;
+  }
+  button {
+    padding: $primary-padding;
+    margin: $primary-margin;
+    background-color: $primary-color;
+    border: $primary-color;
+    font-size: large;
+    border-radius: 999px;
+    max-width: 35rem;
+    &:hover {
+      background: $secondary-color;
     }
   }
 }
