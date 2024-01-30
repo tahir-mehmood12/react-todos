@@ -54,7 +54,7 @@ export default function TodoList() {
               <div className="display-todo">
                 <strong>
                   {todo.text}
-                  {todo.completed ? " completed" : " in progress"}
+                  {todo.completed ? " (Done )" : ""}
                 </strong>
                 <span>{todo.description}</span>
               </div>

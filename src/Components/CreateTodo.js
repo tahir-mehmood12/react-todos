@@ -31,6 +31,7 @@ export default function CreateTodo() {
           placeholder="Enter todo Title"
           value={todoTitle}
           onChange={(e) => setTodoTitle(e.target.value)}
+          required
           //   className={styles.input}
         />
         <label>Enter Description *</label>
@@ -38,6 +39,7 @@ export default function CreateTodo() {
           placeholder="Enter todo description"
           value={todoDescription}
           onChange={(e) => setTodoDescription(e.target.value)}
+          required
           //   className={styles.input}
         />
         <button type="submit">Add Todo</button>
