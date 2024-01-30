@@ -6,6 +6,7 @@ $primary-margin: 1rem;
   margin: 0;
   padding: 0;
 }
+
 .main {
   display: flex;
   flex-direction: column;
@@ -74,6 +75,7 @@ $primary-margin: 1rem;
       padding: $primary-padding;
       font-size: 1.5rem;
       background-color: $primary-color;
+      margin-bottom: $primary-margin;
       div {
         display: flex;
         flex-direction: row;

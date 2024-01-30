@@ -1,11 +1,14 @@
+body {
+  background: url("../assets/HomeBackground.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
 .todo-home {
   max-width: 800px;
-  margin: 1rem auto;
+  margin: 1rem;
   padding: 20px;
-  text-align: center;
-  background-color: #f8f8f8;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   h1 {
     color: #333;
@@ -16,16 +19,6 @@
     margin-bottom: 15px;
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      margin-bottom: 8px;
-      color: #777;
-    }
-  }
   button {
     border-radius: 18px;
     width: 100px;

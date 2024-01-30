@@ -4,6 +4,7 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import { deleteTodo } from "../../Store/todoSlice";
 import EditTodoModal from "./EditTodoModal";
 import { editTodo, toggleTodo } from "../../Store/todoSlice";
+import "../../Styles/TodoStyle.scss";
 
 export default function TodoList() {
   const [editTodoData, setEditTodoData] = useState(null);
