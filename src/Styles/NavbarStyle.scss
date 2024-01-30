@@ -30,3 +30,43 @@ header {
     }
   }
 }
+.toggle-button {
+  display: none;
+}
+@media (max-width: 640px) {
+  .toggle-button {
+    display: block;
+    margin: 2rem;
+  }
+  header {
+    justify-content: start;
+    width: 100vw;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    background-color: #333;
+    z-index: 1;
+  }
+
+  nav.visible {
+    display: flex;
+  }
+
+  nav.hidden {
+    display: none;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+}
