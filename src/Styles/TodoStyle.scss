@@ -1,0 +1,59 @@
+$primary-color: #0cf3c0;
+$primary-padding: 1rem;
+$primary-margin: 1rem;
+.main {
+  display: flex;
+}
+
+.createtodo,
+.todolist {
+  width: 100%;
+  border: 2px solid $primary-color;
+  padding: $primary-padding;
+  margin: $primary-margin;
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $primary-color;
+    padding: $primary-padding;
+    font-size: 1.5rem;
+    background-color: $primary-color;
+    margin: $primary-margin;
+    div {
+      display: flex;
+      flex-direction: row;
+      .display-todo {
+        display: flex;
+        flex-direction: column;
+        padding-left: $primary-padding;
+      }
+      .delete-icon {
+        padding-left: $primary-padding;
+      }
+    }
+  }
+}
+.createtodoform {
+  display: flex;
+  flex-direction: column;
+  label {
+    padding-left: $primary-padding;
+  }
+  input {
+    padding: $primary-padding;
+    margin: $primary-margin;
+    outline-color: $primary-color;
+  }
+  button {
+    padding: $primary-padding;
+    margin: $primary-margin;
+    background-color: $primary-color;
+    border: $primary-color;
+    font-size: large;
+  }
+}

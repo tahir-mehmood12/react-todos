@@ -41,12 +41,24 @@ export default function TodoList() {
     <>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>
-            <input
-              type="checkbox"
-              onChange={() => handleCheckboxChange(todo)}
-            />
-            <span>{todo.text}</span>
+          <li
+            key={todo.id}
+            style={{ backgroundColor: todo.completed && "#1EE148" }}
+          >
+            <div className="todo-detail">
+              <input
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => handleCheckboxChange(todo)}
+              />
+              <div className="display-todo">
+                <strong>
+                  {todo.text}
+                  {todo.completed ? " completed" : " in progress"}
+                </strong>
+                <span>{todo.description}</span>
+              </div>
+            </div>
             <div className="todo-actions">
               <FaEdit className="edit-icon" onClick={() => handleEdit(todo)} />
               <FaTrash

@@ -24,7 +24,8 @@ export default function CreateTodo() {
   }
   return (
     <>
-      <form onSubmit={handleForm}>
+      <form className="createtodoform" onSubmit={handleForm}>
+        <label>Enter Title *</label>
         <input
           type="text"
           placeholder="Enter todo Title"
@@ -32,6 +33,7 @@ export default function CreateTodo() {
           onChange={(e) => setTodoTitle(e.target.value)}
           //   className={styles.input}
         />
+        <label>Enter Description *</label>
         <input
           placeholder="Enter todo description"
           value={todoDescription}
