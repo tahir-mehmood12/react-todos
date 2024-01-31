@@ -61,7 +61,7 @@ export default function TodoList() {
 
   return (
     <>
-      <div className="todo-list">
+      <div className="todo-list-container">
         <div className="todos-list">
           <h2 style={{ textAlign: "center" }}>Todos List</h2>
 
@@ -118,7 +118,7 @@ export default function TodoList() {
             />
           )}
           {filteredTodos().length > 0 && (
-            <div>
+            <div className="delete-btn">
               <button onClick={handleDeleteCompletedTodos}>
                 Delete Complete Todos
               </button>
