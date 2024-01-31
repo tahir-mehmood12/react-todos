@@ -15,6 +15,7 @@ export default function MainNavbar() {
         <button className="toggle-button" onClick={toggleNavbar}>
           ☰
         </button>
+        <p className="logo-text">Todos</p>
         <nav className={isNavbarVisible ? "visible" : "hidden"}>
           <ul>
             <li>

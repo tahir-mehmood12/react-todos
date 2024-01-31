@@ -54,6 +54,7 @@ $list-background-color: rgb(247, 242, 242);
 .todo-list {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 
   .todos-list {
     display: flex;
@@ -117,5 +118,23 @@ $list-background-color: rgb(247, 242, 242);
         }
       }
     }
+  }
+}
+
+.create-todo-btn {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+
+  button {
+    padding: 1rem;
+    background-color: $primary-color;
+    color: $text-color;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 1rem;
+    margin-right: 2rem;
+    position: sticky;
+    margin-bottom: 2rem;
   }
 }
