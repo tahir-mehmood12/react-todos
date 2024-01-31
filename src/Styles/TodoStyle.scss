@@ -121,3 +121,28 @@ $list-background-color: rgb(247, 242, 242);
     }
   }
 }
+.create-todo-btn {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+
+  button {
+    padding: 1rem;
+    background-color: $primary-color;
+    color: $text-color;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 1rem;
+    margin-right: 2rem;
+    position: sticky;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 640px) {
+  .filter-btn,
+  .delete-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
